@@ -10986,6 +10986,7 @@ section.resume-section .resume-section-content {
 
 .wrapper .static-txt {
   color: #495057;
+  margin-left: 80px;
   font-size: 30px;
   font-weight: 400;
 }
@@ -11034,4 +11035,19 @@ section.resume-section .resume-section-content {
     left: 100%;
     margin: 0 -35px 0 35px;
   }
+}
+
+.intro{
+  display: flex;
+  align-items: center; 
+  justify-content: center; 
+  min-height: 15vh;
+}
+
+.paragraph{
+  color: #495057;
+  height: auto;
+  font-size: auto;
+  text-align: center; 
+  min-height: 15vh;
 }
