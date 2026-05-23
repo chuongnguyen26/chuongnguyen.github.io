@@ -10,6 +10,7 @@
   --accent-hover: #163a6b;
   --accent-soft: #eef4fb;
   --max-width: 42rem;
+  --about-max-width: 56rem;
   --nav-height: 3.5rem;
   --font-sans: "Inter", system-ui, -apple-system, sans-serif;
   --font-serif: "Source Serif 4", Georgia, "Times New Roman", serif;
@@ -166,13 +167,19 @@ a:hover {
 
 /* Main layout */
 main {
-  max-width: calc(var(--max-width) + 4rem);
   margin: 0 auto;
   padding: 2.5rem 1.5rem 4rem;
 }
 
 .section {
+  max-width: calc(var(--max-width) + 4rem);
+  margin-left: auto;
+  margin-right: auto;
   margin-bottom: 3.5rem;
+}
+
+#about {
+  max-width: calc(var(--about-max-width) + 4rem);
 }
 
 .section:last-child {
@@ -237,7 +244,7 @@ main {
 
 .hero-bio {
   margin: 0 0 1.25rem;
-  max-width: var(--max-width);
+  max-width: none;
 }
 
 .hero-links {
