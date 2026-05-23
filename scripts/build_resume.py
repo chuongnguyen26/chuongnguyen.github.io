@@ -1,0 +1,220 @@
+#!/usr/bin/env python3
+"""Generate Chuong_Nguyen_Resume.pdf — clean, readable, space-efficient layout."""
+
+from pathlib import Path
+
+from fpdf import FPDF
+from fpdf.enums import XPos, YPos
+
+ROOT = Path(__file__).resolve().parents[1]
+OUTPUT = ROOT / "Chuong_Nguyen_Resume.pdf"
+
+BODY = 9.5
+SMALL = 8.5
+SECTION = 10
+NAME = 16
+LINE = 11.5  # minimum line height — prevents overlapping text
+
+
+class ResumePDF(FPDF):
+    def __init__(self):
+        super().__init__(format="letter", unit="pt")
+        self.set_auto_page_break(auto=True, margin=36)
+        self.set_margins(48, 36, 48)
+
+    def section(self, title: str):
+        self.ln(6)
+        self.set_font("Helvetica", "B", SECTION)
+        self.set_text_color(40, 40, 40)
+        self.cell(0, LINE, title.upper(), new_x=XPos.LMARGIN, new_y=YPos.NEXT)
+        y = self.get_y()
+        self.set_draw_color(200, 200, 200)
+        self.set_line_width(0.5)
+        self.line(self.l_margin, y, self.w - self.r_margin, y)
+        self.ln(5)
+        self.set_text_color(0, 0, 0)
+
+    def entry(self, title: str, date: str, bullets: list[str] | None = None, subtitle: str | None = None):
+        """Job/role block: title + right-aligned date, optional subtitle and bullets."""
+        self.ln(5)
+        width = self.w - self.l_margin - self.r_margin
+        date_col = max(self.get_string_width(date) + 10, 78)
+
+        self.set_font("Helvetica", "B", BODY)
+        title_fits = self.get_string_width(title) <= width - date_col - 8
+
+        if title_fits:
+            self.set_x(self.l_margin)
+            self.cell(width - date_col, LINE, title)
+            self.set_font("Helvetica", "", SMALL)
+            self.cell(date_col, LINE, date, align="R", new_x=XPos.LMARGIN, new_y=YPos.NEXT)
+        else:
+            self.set_x(self.l_margin)
+            self.multi_cell(0, LINE, title)
+            self.set_font("Helvetica", "", SMALL)
+            self.cell(0, LINE - 1, date, align="R", new_x=XPos.LMARGIN, new_y=YPos.NEXT)
+
+        if subtitle:
+            self.set_x(self.l_margin)
+            self.set_font("Helvetica", "I", BODY)
+            self.multi_cell(0, LINE, subtitle)
+
+        if bullets:
+            for text in bullets:
+                self.bullet(text)
+
+    def bullet(self, text: str):
+        indent = 12
+        self.set_x(self.l_margin + indent)
+        self.set_font("Helvetica", "", BODY)
+        self.cell(6, LINE, chr(183))
+        self.multi_cell(self.w - self.l_margin - self.r_margin - indent - 6, LINE, text)
+        self.ln(1)
+
+    def text_line(self, text: str, style: str = "", size: float = BODY):
+        self.set_x(self.l_margin)
+        self.set_font("Helvetica", style, size)
+        self.multi_cell(0, LINE, text)
+        self.ln(1)
+
+    def skill_line(self, label: str, text: str):
+        self.set_x(self.l_margin)
+        self.set_font("Helvetica", "B", BODY)
+        lw = self.get_string_width(label + " ")
+        self.cell(lw, LINE, label + " ")
+        self.set_font("Helvetica", "", BODY)
+        self.multi_cell(self.w - self.l_margin - self.r_margin - lw, LINE, text)
+        self.ln(1)
+
+    def publication(self, year: str, authors: str, title: str, venue: str, name: str = "C Nguyen"):
+        authors_html = authors.replace(name, f"<b>{name}</b>")
+        self.set_x(self.l_margin)
+        self.write_html(
+            f'<font size="{int(BODY)}">'
+            f'<p style="line-height:1.35;margin:0 0 6pt 0;">'
+            f"<b>[{year}]</b> {authors_html}. <i>{title}</i>. {venue}."
+            f"</p></font>"
+        )
+
+
+def build():
+    pdf = ResumePDF()
+    pdf.add_page()
+
+    pdf.set_font("Helvetica", "B", NAME)
+    pdf.cell(0, 18, "Chuong Nguyen", new_x=XPos.LMARGIN, new_y=YPos.NEXT)
+    pdf.set_font("Helvetica", "", SMALL)
+    pdf.multi_cell(
+        0,
+        LINE,
+        "chuongn194@gmail.com | chn021@ucsd.edu | github.com/chuongnguyen26 | "
+        "linkedin.com/in/chuong-nguyen-profile",
+    )
+    pdf.ln(4)
+
+    pdf.section("Education")
+    pdf.entry(
+        "University of California, San Diego - B.S. Computer Science",
+        "Sep 2022 - Jun 2026",
+        subtitle="Incoming fourth year | GPA: 3.800",
+    )
+
+    pdf.section("Research Publications")
+    pdf.text_line("First co-author on all publications listed below.", "I", SMALL)
+
+    publications = [
+        (
+            "2026",
+            "X Pi, Q Yang, C Nguyen, H Shen",
+            "Bridging Human Interpretation and Machine Representation: A Landscape of "
+            "Qualitative Data Analysis in the LLM Era",
+            "arXiv preprint arXiv:2601.11739",
+        ),
+        (
+            "2025",
+            "X Pi, Q Yang, C Nguyen",
+            "LOGOS: LLM-driven End-to-End Grounded Theory Development and Schema Induction "
+            "for Qualitative Research",
+            "arXiv preprint arXiv:2509.24294",
+        ),
+        (
+            "2024",
+            "A Smithwick, C Nguyen, E Gorial, N Tran, AM Flores, INS Munyaka",
+            '"Parent seeking Roblox Safety Help": Comparing Parental Roblox Concerns to '
+            "Roblox Offerings",
+            "IEEE ISTAS 2024, pp. 1-9",
+        ),
+    ]
+    for year, authors, title, venue in publications:
+        pdf.publication(year, authors, title, venue)
+
+    pdf.section("Research Experience")
+    pdf.entry(
+        "Research Assistant, HDSI - UC San Diego",
+        "Apr 2025 - Present",
+        bullets=[
+            "LLMs, agentic frameworks, and data mining for qualitative research; grounded theory, schema induction, and human-aligned reasoning.",
+            "Fine-tuned LLMs with SFT/GRPO; explored test-time scaling and process reward models.",
+        ],
+    )
+    pdf.entry(
+        "Research Assistant, Ujima Lab - UC San Diego",
+        "Sep 2023 - Oct 2024",
+        bullets=[
+            "Beauty Filter: analyzed filter-driven facial enhancements and cultural bias; migrated landmark analysis to a remote server.",
+            "Smart Mirror: Raspberry Pi + DeepFace/Retina for real-time facial analysis in a public art installation.",
+        ],
+    )
+    pdf.entry(
+        "Early Research Scholars Program - UC San Diego",
+        "Sep 2023 - Jun 2024",
+        subtitle="Roblox Safety (IEEE ISTAS); Hate-Crime news pipeline (ERSP)",
+        bullets=[
+            "Topic modeling on 10,000+ Reddit posts; surveyed 100 participants on parental concerns.",
+            "Built scraping pipeline with SerpAPI, NewsPlease, DBSCAN, MeanShift, and OpenAI API.",
+        ],
+    )
+
+    pdf.section("Project Experience")
+    pdf.entry(
+        "Software Developer, Zooseeker",
+        "Apr 2024 - Jun 2024",
+        bullets=[
+            "Database schema, Android UI revamp, and documentation for a zoo navigation app.",
+        ],
+    )
+    pdf.entry(
+        "ACM AI - UC San Diego",
+        "Oct 2022 - Jan 2023",
+        subtitle="Credit Card Fraud Detector",
+        bullets=[
+            "Compared KNN, RF, decision trees, SVM, and logistic regression; built and demoed a fraud detection web app.",
+        ],
+    )
+
+    pdf.section("Skills")
+    pdf.skill_line(
+        "Technical:",
+        "Python, Java, C++, PyTorch, TensorFlow, scikit-learn, Pandas, NumPy, OpenCV, SQL, Git, Linux, LaTeX, Streamlit",
+    )
+    pdf.skill_line(
+        "Research:",
+        "NLP & LLMs, RAG, RL, agentic frameworks, deep research, data mining, qualitative methods, computer vision",
+    )
+    pdf.skill_line("Languages:", "English, Vietnamese")
+
+    pdf.section("Awards & Leadership")
+    for item in [
+        "Provost Honors - UC San Diego",
+        "Machine Learning Specialization - Coursera",
+        "Volunteer Youth Leader - Vietnamese Eucharistic Youth Movement (2022 - Present)",
+        "Peer Mentor - UCSD Mentor Collective (2024)",
+    ]:
+        pdf.bullet(item)
+
+    pdf.output(str(OUTPUT))
+    print(f"Wrote {OUTPUT} ({len(pdf.pages)} page(s))")
+
+
+if __name__ == "__main__":
+    build()
