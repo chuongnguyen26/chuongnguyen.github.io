@@ -198,20 +198,22 @@ main {
 
 /* Hero */
 .hero {
+  --hero-photo-size: 11rem;
   display: grid;
-  grid-template-columns: 7.5rem 1fr;
-  gap: 1.75rem 2rem;
-  align-items: start;
+  grid-template-columns: var(--hero-photo-size) 1fr;
+  gap: 1.75rem 2.5rem;
+  align-items: center;
   margin-bottom: 1rem;
 }
 
 .hero-photo {
-  width: 7.5rem;
-  height: 7.5rem;
+  width: var(--hero-photo-size);
+  height: var(--hero-photo-size);
   border-radius: 50%;
   object-fit: cover;
-  border: 3px solid var(--surface);
+  border: 4px solid var(--surface);
   box-shadow: var(--shadow), 0 0 0 1px var(--border);
+  flex-shrink: 0;
 }
 
 .hero-content h1 {
@@ -519,6 +521,11 @@ main {
 @media (min-width: 768px) {
   main {
     padding-top: 3rem;
+  }
+
+  .hero {
+    --hero-photo-size: 15rem;
+    gap: 2rem 2.75rem;
   }
 }
 
