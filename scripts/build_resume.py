@@ -87,7 +87,7 @@ class ResumePDF(FPDF):
         self.ln(1)
 
     def publication(self, year: str, authors: str, title: str, venue: str, name: str = "C Nguyen"):
-        authors_html = authors.replace(name, f"<b>{name}</b>")
+        authors_html = authors.replace(f"{name}*", f"<b>{name}</b>*").replace(name, f"<b>{name}</b>")
         self.set_x(self.l_margin)
         self.write_html(
             f'<font size="{int(BODY)}">'
@@ -120,26 +120,32 @@ def build():
     )
 
     pdf.section("Research Publications")
-    pdf.text_line("First co-author on all publications listed below.", "I", SMALL)
+    pdf.text_line("Co-first authors marked with *. My name is in bold.", "I", SMALL)
 
     publications = [
         (
             "2026",
-            "X Pi, Q Yang, C Nguyen, H Shen",
-            "Bridging Human Interpretation and Machine Representation: A Landscape of "
-            "Qualitative Data Analysis in the LLM Era",
-            "arXiv preprint arXiv:2601.11739",
+            "X Pi*, Q Yang*, C Nguyen*, H Shen",
+            "Bridge Human Interpretation and Machine Representation With Explicit "
+            "Specification For Qualitative Data Analysis In LLM Era",
+            "International Conference on Machine Learning (ICML) 2026 (arXiv:2601.11739)",
+        ),
+        (
+            "2026",
+            "T Smith*, C Nguyen*, Q Yang, O Bandopadhyay, Y Su, N Polikarpova, X Pi",
+            "QualAlign: Benchmarking Automated Qualitative Coding Against Human Schemas",
+            "Conference on Language Modeling (COLM) 2026",
         ),
         (
             "2025",
-            "X Pi, Q Yang, C Nguyen",
+            "X Pi*, Q Yang*, C Nguyen*",
             "LOGOS: LLM-driven End-to-End Grounded Theory Development and Schema Induction "
             "for Qualitative Research",
             "arXiv preprint arXiv:2509.24294",
         ),
         (
             "2024",
-            "A Smithwick, C Nguyen, E Gorial, N Tran, AM Flores, INS Munyaka",
+            "A Smithwick*, C Nguyen*, E Gorial*, N Tran*, AM Flores, INS Munyaka",
             '"Parent seeking Roblox Safety Help": Comparing Parental Roblox Concerns to '
             "Roblox Offerings",
             "IEEE ISTAS 2024, pp. 1-9",
