@@ -170,6 +170,7 @@ def build():
         bullets=[
             "Beauty Filter: analyzed filter-driven facial enhancements and cultural bias; migrated landmark analysis to a remote server.",
             "Smart Mirror: Raspberry Pi + DeepFace/Retina for real-time facial analysis in a public art installation.",
+            'Co-authored "Parent seeking Roblox Safety Help" (IEEE ISTAS 2024); topic modeling on 10,000+ Reddit posts and survey of 100 participants.',
         ],
     )
     pdf.entry(
