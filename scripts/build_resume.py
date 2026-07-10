@@ -131,12 +131,6 @@ def build():
             "International Conference on Machine Learning (ICML) 2026 (arXiv:2601.11739)",
         ),
         (
-            "2026",
-            "T Smith*, C Nguyen*, Q Yang, O Bandopadhyay, Y Su, N Polikarpova, X Pi",
-            "QualAlign: Benchmarking Automated Qualitative Coding Against Human Schemas",
-            "Conference on Language Modeling (COLM) 2026",
-        ),
-        (
             "2025",
             "X Pi*, Q Yang*, C Nguyen*",
             "LOGOS: LLM-driven End-to-End Grounded Theory Development and Schema Induction "
