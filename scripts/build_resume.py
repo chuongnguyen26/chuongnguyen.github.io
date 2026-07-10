@@ -128,7 +128,7 @@ def build():
             "X Pi*, Q Yang*, C Nguyen*, H Shen",
             "Bridge Human Interpretation and Machine Representation With Explicit "
             "Specification For Qualitative Data Analysis In LLM Era",
-            "International Conference on Machine Learning (ICML) 2026 (arXiv:2601.11739)",
+            "International Conference on Machine Learning (ICML) 2026 - Position Paper (Poster) (arXiv:2601.11739)",
         ),
         (
             "2026",
