@@ -116,7 +116,7 @@ def build():
     pdf.entry(
         "University of California, San Diego - B.S. Computer Science",
         "Sep 2022 - Jun 2026",
-        subtitle="Incoming fourth year | GPA: 3.800",
+        subtitle="Fourth year | Expected graduation June 2026 | GPA: 3.800",
     )
 
     pdf.section("Research Publications")
@@ -160,6 +160,7 @@ def build():
         "Apr 2025 - Present",
         bullets=[
             "LLMs, agentic frameworks, and data mining for qualitative research; grounded theory, schema induction, and human-aligned reasoning.",
+            "Co-authored ICML 2026 position paper and COLM 2026 paper on LLM-assisted qualitative analysis.",
             "Fine-tuned LLMs with SFT/GRPO; explored test-time scaling and process reward models.",
         ],
     )
