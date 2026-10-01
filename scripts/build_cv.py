@@ -60,7 +60,7 @@ def build():
             "Taggert Smith*, Chuong Nguyen*, Qisen Yang, Oishani Bandopadhyay, Yaru Su, "
             "Nadia Polikarpova, Xinyu Pi",
             "QualAlign: Benchmarking Automated Qualitative Coding Against Human Schemas",
-            "Conference on Language Modeling (COLM), 2026",
+            "Conference on Language Modeling (COLM), 2026. openreview.net/forum?id=FaPyCwiiTo",
         ),
         (
             "2024",
@@ -82,8 +82,17 @@ def build():
         name=ME,
     )
 
+    pdf.section("Current Projects")
+    for item in [
+        "Episteme: deep research system (manuscript in preparation).",
+        "Coreference resolution (in progress).",
+    ]:
+        pdf.bullet(item)
+
     pdf.section("Presentations")
     for item in [
+        "Poster: QualAlign: Benchmarking Automated Qualitative Coding Against Human Schemas. "
+        "COLM 2026, San Francisco, CA, Oct 2026.",
         "Poster: Position: Bridge Human Interpretation and Machine Representation With Explicit "
         "Specification For Qualitative Data Analysis In LLM Era. ICML 2026, Seoul, South Korea, Jul 2026.",
         '"Parent seeking Roblox Safety Help". Early Research Scholars Program Symposium, UC San Diego, 2024.',
@@ -154,7 +163,11 @@ def build():
         pdf.bullet(item)
 
     pdf.section("Leadership & Service")
-    pdf.entry("Volunteer Youth Leader, Vietnamese Eucharistic Youth Movement", "2022 - Present")
+    pdf.entry(
+        "Volunteer Youth Leader, Vietnamese Eucharistic Youth Movement",
+        "2022 - Present",
+        bullets=["Teach and mentor young children in the youth program."],
+    )
 
     pdf.section("Skills")
     pdf.skill_line("Programming:", "Python, Java, C++, SQL")
