@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="Chuong Nguyen — UC San Diego Computer Science graduate researching LLMs, agentic frameworks, data mining, and human-aligned reasoning." />
+    <meta name="description" content="Chuong Nguyen — UC San Diego Computer Science graduate researching AI agents for knowledge discovery: knowledge representation, evaluation, and agentic research systems." />
     <meta name="author" content="Chuong Nguyen" />
     <title>Chuong Nguyen</title>
     <link rel="canonical" href="https://chuongnguyen26.github.io/chuongnguyen.github.io/" />
@@ -50,11 +50,11 @@
                         <a href="https://ucsd.edu/">UC San Diego</a>
                     </p>
                     <p class="hero-bio">
-                        I am a recent Computer Science graduate with a strong interest in advancing large language models (LLMs).
-                        My current work focuses on enhancing LLM reasoning through human-inspired approaches, agentic frameworks,
-                        and data mining—with particular attention to context awareness, agent learning and navigation, and
-                        forecasting. I am especially motivated by aligning machine reasoning more closely with human thought
-                        processes to build more reliable and adaptive AI systems.
+                        I am a recent Computer Science graduate and a research assistant at the Halıcıoğlu Data Science Institute.
+                        I study how AI agents can move from answering questions to actively expanding their understanding of the
+                        world: how they represent what they know, recognize what remains unexplained, decide which connections are
+                        worth investigating, and validate which discoveries deserve to change what they believe. My work spans
+                        knowledge representation, evaluation of LLM-generated interpretation, and agentic deep research systems.
                     </p>
                     <div class="hero-links">
                         <a href="mailto:chuongn194@gmail.com">chuongn194@gmail.com</a>
@@ -65,9 +65,9 @@
                         <span class="link-sep" aria-hidden="true">·</span>
                         <a href="https://github.com/chuongnguyen26" target="_blank" rel="noopener">GitHub</a>
                         <span class="link-sep" aria-hidden="true">·</span>
-                        <a href="https://chuongnguyen26.github.io/chuongnguyen.github.io/Chuong_Nguyen_CV.pdf?v=10" target="_blank" rel="noopener">CV</a>
+                        <a href="https://chuongnguyen26.github.io/chuongnguyen.github.io/Chuong_Nguyen_CV.pdf?v=11" target="_blank" rel="noopener">CV</a>
                         <span class="link-sep" aria-hidden="true">·</span>
-                        <a href="https://chuongnguyen26.github.io/chuongnguyen.github.io/Chuong_Nguyen_Resume.pdf?v=10" target="_blank" rel="noopener">Resume</a>
+                        <a href="https://chuongnguyen26.github.io/chuongnguyen.github.io/Chuong_Nguyen_Resume.pdf?v=11" target="_blank" rel="noopener">Resume</a>
                     </div>
                 </div>
             </div>
@@ -76,36 +76,29 @@
         <section class="section" id="research">
             <h2 class="section-title">Research</h2>
             <p class="section-intro">
-                I study how large language models, agentic frameworks, and data mining can support rigorous qualitative inquiry
-                and more human-aligned reasoning.
+                My research asks how AI agents can move from answering questions to discovering knowledge. I approach this
+                through three connected problems: representation, evaluation, and investigation.
             </p>
             <div class="research-grid">
                 <article class="research-card">
-                    <h3>LLM Reasoning &amp; Qualitative Methods</h3>
+                    <h3>Knowledge Representation</h3>
                     <p>
-                        Developing frameworks that combine LLMs with grounded theory and schema induction for qualitative research,
-                        and surveying how qualitative data analysis is evolving in the LLM era.
+                        Turning unstructured evidence into structured, relational knowledge an agent can reason over, without fixing
+                        that structure so tightly that unexpected relationships become impossible to discover (LOGOS).
                     </p>
                 </article>
                 <article class="research-card">
-                    <h3>Agentic Frameworks</h3>
+                    <h3>Evaluation &amp; Validation</h3>
                     <p>
-                        Building and evaluating agentic systems that coordinate planning, tool use, and multi-step reasoning
-                        to solve complex research and real-world tasks more reliably.
+                        Asking what an AI system has actually understood, and how to tell a genuinely supported conclusion from a
+                        merely plausible one (QualAlign, ICML 2026 position paper).
                     </p>
                 </article>
                 <article class="research-card">
-                    <h3>Data Mining</h3>
+                    <h3>Agentic Research &amp; Curiosity</h3>
                     <p>
-                        Applying large-scale data mining and topic modeling to extract patterns from unstructured text and
-                        behavioral data, supporting both qualitative discovery and quantitative validation.
-                    </p>
-                </article>
-                <article class="research-card">
-                    <h3>Human-Inspired Machine Reasoning</h3>
-                    <p>
-                        Exploring approaches that improve context awareness, agent learning and navigation, and forecasting
-                        by bringing machine reasoning closer to human cognitive processes.
+                        Building agents that decompose questions, gather and validate evidence, and revise their conclusions, and
+                        studying how they can decide which question to pursue next (Episteme).
                     </p>
                 </article>
                 <article class="research-card">
@@ -175,15 +168,41 @@
 
             <article class="entry">
                 <div class="entry-header">
-                    <h3 class="entry-title">Research Assistant · <span class="entry-org"><a href="https://datascience.ucsd.edu/">HDSI</a></span></h3>
+                    <h3 class="entry-title">Research Assistant · <span class="entry-org"><a href="https://zhiting.ucsd.edu/">Prof. Zhiting Hu's Group</a>, <a href="https://datascience.ucsd.edu/">HDSI</a></span></h3>
                     <time class="entry-date" datetime="2025-04">Apr 2025 – Present</time>
                 </div>
-                <p class="entry-body">
-                    Research assistant in the Halıcıoğlu Data Science Institute, working on large language models, agentic
-                    frameworks, and data mining for qualitative research—including grounded theory development, schema
-                    induction, and human-aligned reasoning. Co-authored ICML 2026 position paper and COLM 2026 paper on
-                    LLM-assisted qualitative analysis.
-                </p>
+                <p class="entry-subtitle">Mentors: Xinyu (Frederick) Pi and Qiyue Gao (PhD students)</p>
+                <div class="entry-item">
+                    <h4>LOGOS</h4>
+                    <p>
+                        Co-developed and led implementation of an LLM-driven framework that turns unstructured evidence (interview
+                        transcripts, legal texts, agent trajectories) into hierarchical schemas, building semantic clustering,
+                        relation-aware graph reasoning, and iterative refinement. Reaches an 88.2% matching rate against
+                        expert-developed schemas.
+                    </p>
+                </div>
+                <div class="entry-item">
+                    <h4>QualAlign (COLM 2026)</h4>
+                    <p>
+                        Co-built a benchmark for automated qualitative coding and ran the baselines. Organized evaluation metrics into
+                        lexical, semantic, and model-based interpretive categories, showing that metrics agree within a category but
+                        diverge across them.
+                    </p>
+                </div>
+                <div class="entry-item">
+                    <h4>Position Paper (ICML 2026)</h4>
+                    <p>
+                        Co-defined a framework that crosses levels of meaning-making with levels of modeling, and mapped existing
+                        automated qualitative-analysis systems onto it.
+                    </p>
+                </div>
+                <div class="entry-item">
+                    <h4>Episteme (in progress)</h4>
+                    <p>
+                        Building a multi-agent deep research system that decomposes questions, gathers and validates web evidence,
+                        and revises its conclusions when evidence conflicts.
+                    </p>
+                </div>
             </article>
 
             <article class="entry">
@@ -281,10 +300,12 @@
                 <li>Git</li>
                 <li>LaTeX</li>
                 <li>NLP &amp; LLMs</li>
+                <li>Multi-Agent Systems</li>
+                <li>Deep Research Agents</li>
                 <li>RAG</li>
+                <li>Knowledge Representation</li>
+                <li>LLM Evaluation</li>
                 <li>Reinforcement Learning (RL)</li>
-                <li>Agentic Frameworks</li>
-                <li>Deep Research</li>
                 <li>Data Mining</li>
                 <li>Qualitative Methods</li>
                 <li>Computer Vision</li>

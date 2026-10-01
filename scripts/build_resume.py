@@ -165,11 +165,14 @@ def build():
 
     pdf.section("Research Experience")
     pdf.entry(
-        "Research Assistant, HDSI - UC San Diego",
+        "Research Assistant, Prof. Zhiting Hu's Group - HDSI, UC San Diego",
         "Apr 2025 - Present",
         bullets=[
-            "LLMs, agentic frameworks, and data mining for qualitative research; grounded theory, schema induction, and human-aligned reasoning.",
-            "Co-authored ICML 2026 position paper and COLM 2026 paper on LLM-assisted qualitative analysis.",
+            "LOGOS: led implementation of an LLM framework that turns unstructured evidence into hierarchical schemas "
+            "(semantic clustering, relation-aware graph reasoning); 88.2% match with expert schemas.",
+            "QualAlign (COLM 2026): co-built a qualitative-coding benchmark and ran baselines across metric families.",
+            "ICML 2026 position paper: co-defined a framework for evaluating automated qualitative analysis.",
+            "Episteme (in progress): building a multi-agent deep research system that gathers, validates, and revises evidence.",
             "Fine-tuned LLMs with SFT/GRPO; explored test-time scaling and process reward models.",
         ],
     )
@@ -177,7 +180,7 @@ def build():
         "Research Assistant, Ujima Lab - UC San Diego",
         "Sep 2023 - Oct 2024",
         bullets=[
-            "Beauty Filter: analyzed filter-driven facial enhancements and cultural bias; migrated landmark analysis to a remote server.",
+            "Beauty Filter: analyzed cultural bias in filter-driven facial enhancements; migrated analysis to a remote server.",
             "Smart Mirror: Raspberry Pi + DeepFace/Retina for real-time facial analysis in a public art installation.",
             'Co-authored "Parent seeking Roblox Safety Help" (IEEE ISTAS 2024); topic modeling on 10,000+ Reddit posts and survey of 100 participants.',
         ],
@@ -185,10 +188,8 @@ def build():
     pdf.entry(
         "Early Research Scholars Program - UC San Diego",
         "Sep 2023 - Jun 2024",
-        subtitle="Roblox Safety (IEEE ISTAS); Hate-Crime news pipeline (ERSP)",
         bullets=[
-            "Topic modeling on 10,000+ Reddit posts; surveyed 100 participants on parental concerns.",
-            "Built scraping pipeline with SerpAPI, NewsPlease, DBSCAN, MeanShift, and OpenAI API.",
+            "Built a hate-crime news pipeline with SerpAPI, NewsPlease, DBSCAN, MeanShift, and the OpenAI API.",
         ],
     )
 
@@ -212,11 +213,12 @@ def build():
     pdf.section("Skills")
     pdf.skill_line(
         "Technical:",
-        "Python, Java, C++, PyTorch, TensorFlow, scikit-learn, Pandas, NumPy, OpenCV, SQL, Git, Linux, LaTeX, Streamlit",
+        "Python, Java, C++, PyTorch, TensorFlow, scikit-learn, Pandas, NumPy, OpenCV, SQL, Git, Linux, LaTeX",
     )
     pdf.skill_line(
         "Research:",
-        "NLP & LLMs, RAG, RL, agentic frameworks, deep research, data mining, qualitative methods, computer vision",
+        "NLP & LLMs, multi-agent systems, deep research agents, RAG, knowledge representation, LLM evaluation, "
+        "SFT/GRPO, RL, data mining",
     )
     pdf.skill_line("Languages:", "English, Vietnamese")
 

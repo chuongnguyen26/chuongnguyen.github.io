@@ -34,9 +34,9 @@ def build():
 
     pdf.section("Research Interests")
     pdf.text_line(
-        "Large language models; LLM reasoning through human-inspired approaches; agentic frameworks; "
-        "data mining; LLM-assisted qualitative data analysis; context awareness, agent learning and "
-        "navigation, and forecasting."
+        "AI agents for knowledge discovery; agentic research systems; knowledge representation; "
+        "curiosity-driven investigation and abductive hypothesis generation; evaluation and validation of "
+        "LLM-generated understanding; resource-aware reinforcement learning for agents."
     )
 
     pdf.section("Education")
@@ -85,13 +85,6 @@ def build():
         name=ME,
     )
 
-    pdf.section("Current Projects")
-    for item in [
-        "Episteme: deep research system (manuscript in preparation).",
-        "Coreference resolution (in progress).",
-    ]:
-        pdf.bullet(item)
-
     pdf.section("Presentations")
     for item in [
         "Poster: QualAlign: Benchmarking Automated Qualitative Coding Against Human Schemas. "
@@ -107,10 +100,18 @@ def build():
         "Apr 2025 - Present",
         subtitle="Mentors: Xinyu (Frederick) Pi and Qiyue Gao (PhD students)",
         bullets=[
-            "Conduct research on large language models, agentic frameworks, and data mining for qualitative "
-            "research, including grounded theory development, schema induction, and human-aligned reasoning.",
+            "LOGOS: co-developed and led implementation of an LLM-driven framework that turns unstructured "
+            "evidence (interview transcripts, legal texts, agent trajectories) into hierarchical schemas, building "
+            "semantic clustering, relation-aware graph reasoning, and iterative refinement; reaches an 88.2% "
+            "matching rate against expert-developed schemas.",
+            "QualAlign (COLM 2026): co-built a benchmark for automated qualitative coding and ran the baselines; "
+            "organized evaluation metrics into lexical, semantic, and model-based interpretive categories, showing "
+            "that metrics agree within a category but diverge across them.",
+            "Position paper (ICML 2026): co-defined a framework crossing levels of meaning-making with levels of "
+            "modeling, and mapped existing automated qualitative-analysis systems onto it.",
+            "Episteme (in progress): building a multi-agent deep research system that decomposes questions, gathers "
+            "and validates web evidence, and revises its conclusions when evidence conflicts.",
             "Fine-tuned LLMs with SFT and GRPO; explored test-time scaling and process reward models.",
-            "Co-first author on an ICML 2026 position paper, a COLM 2026 paper (QualAlign), and the LOGOS preprint.",
         ],
     )
     pdf.entry(
@@ -180,8 +181,9 @@ def build():
     )
     pdf.skill_line(
         "Research:",
-        "NLP & LLMs, LLM fine-tuning (SFT, GRPO), RAG, reinforcement learning, agentic frameworks, "
-        "data mining, topic modeling, qualitative methods, computer vision",
+        "NLP & LLMs, multi-agent orchestration, deep research agents, retrieval-augmented generation, "
+        "knowledge representation, semantic clustering, graph-based reasoning, LLM evaluation, "
+        "LLM fine-tuning (SFT, GRPO), reinforcement learning, data mining, topic modeling, qualitative methods",
     )
     pdf.skill_line("Tools:", "Git, Linux, LaTeX")
     pdf.skill_line("Languages:", "English, Vietnamese")
