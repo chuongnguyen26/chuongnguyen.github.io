@@ -213,12 +213,13 @@ def build():
     pdf.section("Skills")
     pdf.skill_line(
         "Technical:",
-        "Python, Java, C++, PyTorch, TensorFlow, scikit-learn, Pandas, NumPy, OpenCV, SQL, Git, Linux, LaTeX",
+        "Python, Java, C++, SQL, PyTorch, Hugging Face, vLLM, LLM APIs, scikit-learn, Pandas, Docker, Git, Linux, "
+        "AI coding agents",
     )
     pdf.skill_line(
         "Research:",
-        "NLP & LLMs, tool-using LLM agents, deep research agents, RAG, knowledge representation, LLM evaluation, "
-        "SFT/GRPO, RL, data mining",
+        "LLM agents (tool use, deep research), human-aligned LLM evaluation, LLM-assisted qualitative analysis, "
+        "SFT/GRPO, RAG, knowledge representation, data mining",
     )
     pdf.skill_line("Languages:", "English, Vietnamese")
 

@@ -178,15 +178,16 @@ def build():
     pdf.skill_line("Programming:", "Python, Java, C++, SQL")
     pdf.skill_line(
         "ML & Data:",
-        "PyTorch, TensorFlow, scikit-learn, Pandas, NumPy, OpenCV, Streamlit",
+        "PyTorch, Hugging Face, vLLM, LLM APIs (OpenAI, Anthropic, Gemini), TensorFlow, scikit-learn, "
+        "Pandas, NumPy, OpenCV",
     )
     pdf.skill_line(
         "Research:",
-        "NLP & LLMs, tool-using LLM agents, deep research agents, retrieval-augmented generation, "
-        "knowledge representation, semantic clustering, graph-based reasoning, LLM evaluation, "
-        "LLM fine-tuning (SFT, GRPO), reinforcement learning, data mining, topic modeling, qualitative methods",
+        "LLM agents (tool use, deep research), human-aligned LLM evaluation, LLM-assisted qualitative analysis, "
+        "fine-tuning and RL (SFT, GRPO), retrieval-augmented generation with belief revision, knowledge "
+        "representation (semantic clustering, graph-based reasoning), large-scale data mining, topic modeling",
     )
-    pdf.skill_line("Tools:", "Git, Linux, LaTeX")
+    pdf.skill_line("Tools:", "Git, Linux, Docker, LaTeX, AI coding agents (Codex, Claude Code, OpenCode)")
     pdf.skill_line("Languages:", "English, Vietnamese")
 
     pdf.output(str(OUTPUT))
