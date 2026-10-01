@@ -103,7 +103,7 @@ def build():
 
     pdf.section("Research Experience")
     pdf.entry(
-        "Research Assistant, Halicioglu Data Science Institute (HDSI) - UC San Diego",
+        "Research Assistant, Prof. Zhiting Hu's Group - HDSI, UC San Diego",
         "Apr 2025 - Present",
         subtitle="Mentors: Xinyu Pi and Qiyue Gao (PhD students)",
         bullets=[
