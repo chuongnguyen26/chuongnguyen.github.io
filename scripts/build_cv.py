@@ -68,7 +68,7 @@ def build():
         (
             "2024",
             "Andrew Smithwick*, Chuong Nguyen*, Emily Gorial*, Natasha Tran*, A. M. Flores, "
-            "I. N. S. Munyaka",
+            "Imani N. S. Munyaka",
             '"Parent seeking Roblox Safety Help": Comparing Parental Roblox Concerns to Roblox Offerings',
             "IEEE International Symposium on Technology and Society (ISTAS), pp. 1-9, 2024",
         ),
@@ -116,6 +116,7 @@ def build():
     pdf.entry(
         "Research Assistant, Ujima Lab - UC San Diego",
         "Sep 2023 - Oct 2024",
+        subtitle="Advisor: Prof. Imani Munyaka",
         bullets=[
             "Beauty Filter: analyzed facial enhancements from three filter applications (Snatched, Blochi Gora, "
             "Baby Girl) to investigate cultural biases in appearance modification; migrated the facial landmark "
