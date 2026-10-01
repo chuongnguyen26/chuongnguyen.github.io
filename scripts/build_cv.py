@@ -96,8 +96,6 @@ def build():
     for item in [
         "Poster: QualAlign: Benchmarking Automated Qualitative Coding Against Human Schemas. "
         "COLM 2026, San Francisco, CA, Oct 2026.",
-        "Poster: Position: Bridge Human Interpretation and Machine Representation With Explicit "
-        "Specification For Qualitative Data Analysis In LLM Era. ICML 2026, Seoul, South Korea, Jul 2026.",
         '"Parent seeking Roblox Safety Help". Early Research Scholars Program Symposium, UC San Diego, 2024.',
         "Credit Card Fraud Detector. ACM AI Symposium, UC San Diego, 2023.",
     ]:
