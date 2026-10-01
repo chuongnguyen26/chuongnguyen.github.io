@@ -172,7 +172,7 @@ def build():
             "(semantic clustering, relation-aware graph reasoning); 88.2% match with expert schemas.",
             "QualAlign (COLM 2026): co-built a qualitative-coding benchmark and ran baselines across metric families.",
             "ICML 2026 position paper: co-defined a framework for evaluating automated qualitative analysis.",
-            "Episteme (in progress): building a multi-agent deep research system that gathers, validates, and revises evidence.",
+            "Episteme (in progress): co-building a deep research agent harness (tool use, evidence synthesis, evaluation).",
             "Fine-tuned LLMs with SFT/GRPO; explored test-time scaling and process reward models.",
         ],
     )
@@ -217,7 +217,7 @@ def build():
     )
     pdf.skill_line(
         "Research:",
-        "NLP & LLMs, multi-agent systems, deep research agents, RAG, knowledge representation, LLM evaluation, "
+        "NLP & LLMs, tool-using LLM agents, deep research agents, RAG, knowledge representation, LLM evaluation, "
         "SFT/GRPO, RL, data mining",
     )
     pdf.skill_line("Languages:", "English, Vietnamese")

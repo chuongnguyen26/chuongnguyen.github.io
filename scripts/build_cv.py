@@ -109,8 +109,8 @@ def build():
             "that metrics agree within a category but diverge across them.",
             "Position paper (ICML 2026): co-defined a framework crossing levels of meaning-making with levels of "
             "modeling, and mapped existing automated qualitative-analysis systems onto it.",
-            "Episteme (in progress): building a multi-agent deep research system that decomposes questions, gathers "
-            "and validates web evidence, and revises its conclusions when evidence conflicts.",
+            "Episteme (in progress): core contributor to the agent harness for a deep research system, covering "
+            "tool use, evidence synthesis, and evaluation.",
             "Fine-tuned LLMs with SFT and GRPO; explored test-time scaling and process reward models.",
         ],
     )
@@ -181,7 +181,7 @@ def build():
     )
     pdf.skill_line(
         "Research:",
-        "NLP & LLMs, multi-agent orchestration, deep research agents, retrieval-augmented generation, "
+        "NLP & LLMs, tool-using LLM agents, deep research agents, retrieval-augmented generation, "
         "knowledge representation, semantic clustering, graph-based reasoning, LLM evaluation, "
         "LLM fine-tuning (SFT, GRPO), reinforcement learning, data mining, topic modeling, qualitative methods",
     )
