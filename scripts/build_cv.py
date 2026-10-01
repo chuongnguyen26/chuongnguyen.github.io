@@ -10,8 +10,11 @@ ME = "Chuong Nguyen"
 
 
 def subheading(pdf: ResumePDF, text: str):
-    pdf.ln(2)
-    pdf.text_line(text, "B", BODY)
+    pdf.ln(3)
+    pdf.set_x(pdf.l_margin)
+    pdf.set_font("Helvetica", "BI", BODY)
+    pdf.cell(0, LINE, text, new_x=XPos.LMARGIN, new_y=YPos.NEXT)
+    pdf.ln(3)
 
 
 def build():

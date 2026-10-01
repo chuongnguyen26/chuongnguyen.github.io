@@ -50,14 +50,14 @@ class ResumePDF(FPDF):
             self.cell(date_col, LINE, date, align="R", new_x=XPos.LMARGIN, new_y=YPos.NEXT)
         else:
             self.set_x(self.l_margin)
-            self.multi_cell(0, LINE, title)
+            self.multi_cell(0, LINE, title, align="L")
             self.set_font("Helvetica", "", SMALL)
             self.cell(0, LINE - 1, date, align="R", new_x=XPos.LMARGIN, new_y=YPos.NEXT)
 
         if subtitle:
             self.set_x(self.l_margin)
             self.set_font("Helvetica", "I", BODY)
-            self.multi_cell(0, LINE, subtitle)
+            self.multi_cell(0, LINE, subtitle, align="L")
 
         if bullets:
             for text in bullets:
@@ -68,13 +68,13 @@ class ResumePDF(FPDF):
         self.set_x(self.l_margin + indent)
         self.set_font("Helvetica", "", BODY)
         self.cell(6, LINE, chr(183))
-        self.multi_cell(self.w - self.l_margin - self.r_margin - indent - 6, LINE, text)
+        self.multi_cell(self.w - self.l_margin - self.r_margin - indent - 6, LINE, text, align="L")
         self.ln(1)
 
     def text_line(self, text: str, style: str = "", size: float = BODY):
         self.set_x(self.l_margin)
         self.set_font("Helvetica", style, size)
-        self.multi_cell(0, LINE, text)
+        self.multi_cell(0, LINE, text, align="L")
         self.ln(1)
 
     def skill_line(self, label: str, text: str):
@@ -83,18 +83,27 @@ class ResumePDF(FPDF):
         lw = self.get_string_width(label + " ")
         self.cell(lw, LINE, label + " ")
         self.set_font("Helvetica", "", BODY)
-        self.multi_cell(self.w - self.l_margin - self.r_margin - lw, LINE, text)
+        self.multi_cell(self.w - self.l_margin - self.r_margin - lw, LINE, text, align="L")
         self.ln(1)
 
     def publication(self, year: str, authors: str, title: str, venue: str, name: str = "C Nguyen"):
-        authors_html = authors.replace(f"{name}*", f"<b>{name}</b>*").replace(name, f"<b>{name}</b>")
+        def write(style: str, text: str):
+            self.set_font("Helvetica", style, BODY)
+            first_word = text.split(" ", 1)[0]
+            if self.get_x() + self.get_string_width(first_word) > self.w - self.r_margin:
+                self.ln(LINE)
+            self.write(LINE, text)
+
         self.set_x(self.l_margin)
-        self.write_html(
-            f'<font size="{int(BODY)}">'
-            f'<p style="line-height:1.35;margin:0 0 6pt 0;">'
-            f"<b>[{year}]</b> {authors_html}. <i>{title}</i>. {venue}."
-            f"</p></font>"
-        )
+        write("B", f"[{year}] ")
+        for i, part in enumerate(authors.split(name)):
+            if i:
+                write("B", name)
+            write("", part)
+        write("", ". ")
+        write("I", title)
+        write("", f". {venue}.")
+        self.ln(LINE + 5)
 
 
 def build():
