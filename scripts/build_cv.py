@@ -105,7 +105,7 @@ def build():
     pdf.entry(
         "Research Assistant, Prof. Zhiting Hu's Group - HDSI, UC San Diego",
         "Apr 2025 - Present",
-        subtitle="Mentors: Xinyu Pi and Qiyue Gao (PhD students)",
+        subtitle="Mentors: Xinyu (Frederick) Pi and Qiyue Gao (PhD students)",
         bullets=[
             "Conduct research on large language models, agentic frameworks, and data mining for qualitative "
             "research, including grounded theory development, schema induction, and human-aligned reasoning.",
