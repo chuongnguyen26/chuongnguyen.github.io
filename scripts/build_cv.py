@@ -34,9 +34,10 @@ def build():
 
     pdf.section("Research Interests")
     pdf.text_line(
-        "AI agents for knowledge discovery; agentic research systems; knowledge representation; "
-        "curiosity-driven investigation and abductive hypothesis generation; evaluation and validation of "
-        "LLM-generated understanding; resource-aware reinforcement learning for agents."
+        "Building AI agents that expand human understanding rather than only answer questions. Specific "
+        "interests: agentic research systems; knowledge representation; curiosity-driven inquiry and abductive "
+        "hypothesis generation; evaluating and validating LLM-generated interpretations; resource-aware "
+        "reinforcement learning for agents."
     )
 
     pdf.section("Education")
