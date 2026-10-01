@@ -116,7 +116,7 @@ def build():
     pdf.entry(
         "University of California, San Diego - B.S. Computer Science",
         "Sep 2022 - Jun 2026",
-        subtitle="Fourth year | Expected graduation June 2026 | GPA: 3.800",
+        subtitle="Degree conferred June 2026 | GPA: 3.803",
     )
 
     pdf.section("Research Publications")
