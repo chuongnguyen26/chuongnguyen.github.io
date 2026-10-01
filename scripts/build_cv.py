@@ -105,11 +105,12 @@ def build():
     pdf.entry(
         "Research Assistant, Halicioglu Data Science Institute (HDSI) - UC San Diego",
         "Apr 2025 - Present",
+        subtitle="Mentors: Xinyu Pi and Qiyue Gao (PhD students)",
         bullets=[
-            "Research on large language models, agentic frameworks, and data mining for qualitative research, "
-            "including grounded theory development, schema induction, and human-aligned reasoning.",
+            "Conduct research on large language models, agentic frameworks, and data mining for qualitative "
+            "research, including grounded theory development, schema induction, and human-aligned reasoning.",
             "Fine-tuned LLMs with SFT and GRPO; explored test-time scaling and process reward models.",
-            "Co-first author on ICML 2026 position paper and COLM 2026 paper (QualAlign); co-first author on LOGOS.",
+            "Co-first author on an ICML 2026 position paper, a COLM 2026 paper (QualAlign), and the LOGOS preprint.",
         ],
     )
     pdf.entry(
