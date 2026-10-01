@@ -23,7 +23,7 @@ class ResumePDF(FPDF):
         self.set_margins(48, 36, 48)
 
     def section(self, title: str):
-        self.ln(6)
+        self.ln(8)
         self.set_font("Helvetica", "B", SECTION)
         self.set_text_color(40, 40, 40)
         self.cell(0, LINE, title.upper(), new_x=XPos.LMARGIN, new_y=YPos.NEXT)
